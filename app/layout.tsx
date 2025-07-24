@@ -28,26 +28,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Provider>
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        enableSystem
-        disableTransitionOnChange
+
+
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
       >
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
         >
-          {children}
-          <Toaster
-            position="top-right"
-            richColors
-            closeButton
-            duration={5000}
-          />
-        </body>
-      </ThemeProvider>
-      </Provider>
+          <Provider>
+
+            {children}
+
+          </Provider>
+        </ThemeProvider>
+        <Toaster
+          position="top-right"
+          richColors
+          closeButton
+          duration={5000}
+        />
+      </body>
+
+
     </html>
   );
 }

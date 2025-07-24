@@ -9,7 +9,7 @@ interface DropBackProps {
 
 export default function FallBack({ is, children }: DropBackProps) {
     if (is) {
-        return (<Loading />)
+        return (<Loading fullscreen />)
 
     }
     return (

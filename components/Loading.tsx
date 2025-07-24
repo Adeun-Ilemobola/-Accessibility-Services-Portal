@@ -10,12 +10,13 @@ const PHRASES = [
   "Serving up your data…",
 ];
 
-export default function Loading() {
+export default function Loading({ fullscreen }: { fullscreen?: boolean }) {
   const phrase = PHRASES[Math.floor(Math.random() * PHRASES.length)]
+  const size = fullscreen ? "min-h-screen " : "w-full h-full  flex-1 "
       
 
   return (
-    <div className="relative flex-1 flex flex-col items-center justify-center min-h-full w-full py-12">
+    <div className={`relative  flex flex-col items-center justify-center py-1 ${size}`}>
       {/* Centered Loader + Glow together */}
       <div className="relative flex items-center justify-center w-32 h-32">
         {/* Loader Icon using text-primary */}
